@@ -18,9 +18,9 @@
         /* Cabeçalho da tabela fica fixo logo abaixo da barra de pesquisa */
         .table-container th { 
             position: sticky; 
-            top: 150px; /* Ajustado para acompanhar a descida do container */
+            top: 150px; 
             z-index: 10; 
-            background-color: #1e293b; 
+            background-color: #1e293b; /* Cor de fundo slate-800 para não vazar o texto */
         }
         
         #graficos, #termometro, #sintese-ebook, #tabela-respostas {
@@ -341,15 +341,16 @@
             </div>
 
             <!-- Tabela com Todas as Respostas (Anônima) -->
-            <div class="sticky top-[75px] z-20 bg-slate-900/95 backdrop-blur-md pb-4 pt-3 -mx-6 px-6 border-b border-slate-800 shadow-sm">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-                <h3 class="text-lg font-bold text-white">Resumo Anônimo das Respostas dos Alunos</h3>
-                <p class="text-xs text-slate-400">Total de 792 registros processados (nomes ocultados para preservar privacidade)</p>
-            </div>
-            <div class="w-full sm:w-72">
-                <input type="text" id="searchInput" placeholder="Pesquisar por perfil ou palavra-chave..." onkeyup="filterTable()" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500 transition">
-            </div>
+            <div id="tabela-respostas" class="bg-slate-900 border border-slate-800/80 rounded-2xl p-6 shadow-lg">
+                
+                <!-- Cabeçalho fixo da seção de respostas posicionado abaixo da barra superior -->
+                <div class="sticky top-[75px] z-20 bg-slate-900/95 backdrop-blur-md pb-4 pt-3 -mx-6 px-6 border-b border-slate-800 shadow-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Resumo Anônimo das Respostas dos Alunos</h3>
+                            <p class="text-xs text-slate-400">Total de 792 registros processados (nomes ocultados para preservar privacidade)</p>
+                        </div>
+                        
                     </div>
                 </div>
 
@@ -372,11 +373,11 @@
                         </tr>
                         <tr class="hover:bg-slate-800/30 transition">
                             <td class="px-4 py-3 font-medium text-white"><span class="px-2.5 py-1 text-xs rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Professores / Educadores</span></td>
-                            <td class="px-4 py-3 text-slate-300 text-sm leading-relaxed"> Professora em Santa Rita/PB ; lida com vulnerabilidades sociais; espera somar saberes para instrumentalizar sua escuta e ação na defesa dos direitos humanos.</td>
+                            <td class="px-4 py-3 text-slate-300 text-sm leading-relaxed"> Professora em Santa Rita/PB (Ensino Religioso, Projetos de Vida, Ciências e EJA); lida com vulnerabilidades sociais; espera somar saberes para instrumentalizar sua escuta e ação na defesa dos direitos humanos.</td>
                         </tr>
                         <tr class="hover:bg-slate-800/30 transition">
                             <td class="px-4 py-3 font-medium text-white"><span class="px-2.5 py-1 text-xs rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Professores / Educadores</span></td>
-                            <td class="px-4 py-3 text-slate-300 text-sm leading-relaxed"> Professora desde 2015 ; compreende a educação além da transmissão de conteúdos, envolvendo acolhimento e escuta; busca aprimorar sua prática de forma humanizada e inclusiva.</td>
+                            <td class="px-4 py-3 text-slate-300 text-sm leading-relaxed"> Professora desde 2015 na Escola Ismael Gomes de Carvalho; compreende a educação além da transmissão de conteúdos, envolvendo acolhimento e escuta; busca aprimorar sua prática de forma humanizada e inclusiva.</td>
                         </tr>
                         <tr class="hover:bg-slate-800/30 transition">
                             <td class="px-4 py-3 font-medium text-white"><span class="px-2.5 py-1 text-xs rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Gestão / Orientação</span></td>
@@ -396,7 +397,7 @@
                         </tr>
                         <tr class="hover:bg-slate-800/30 transition">
                             <td class="px-4 py-3 font-medium text-white"><span class="px-2.5 py-1 text-xs rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Outros / Não Especificado</span></td>
-                            <td class="px-4 py-3 text-slate-300 text-sm leading-relaxed"> Coordena Projetos Escolares para os Direitos Humanos ; destaca que o curso fortalece as temáticas do órgão, dialogando com programas de apoio psicossocial e dignidade menstrual.</td>
+                            <td class="px-4 py-3 text-slate-300 text-sm leading-relaxed"> Coordena o Serviço de Projetos Escolares para os Direitos Humanos (SEPEDH) na SEED de Sergipe; destaca que o curso fortalece as temáticas do órgão, dialogando com programas de apoio psicossocial e dignidade menstrual.</td>
                         </tr>
                         <tr class="hover:bg-slate-800/30 transition">
                             <td class="px-4 py-3 font-medium text-white"><span class="px-2.5 py-1 text-xs rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Professores / Educadores</span></td>
@@ -408,7 +409,7 @@
                         </tr>
                         <tr class="hover:bg-slate-800/30 transition">
                             <td class="px-4 py-3 font-medium text-white"><span class="px-2.5 py-1 text-xs rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Outros / Não Especificado</span></td>
-                            <td class="px-4 py-3 text-slate-300 text-sm leading-relaxed"> Fonoaudióloga em Sertão do Araripe; desenvolve ações biopsicossociais e busca qualificar sua atuação fundamentada nos direitos humanos.</td>
+                            <td class="px-4 py-3 text-slate-300 text-sm leading-relaxed"> Fonoaudióloga no Núcleo de Atenção ao Servidor (NAS) da GRE Sertão do Araripe; desenvolve ações biopsicossociais e busca qualificar sua atuação fundamentada nos direitos humanos.</td>
                         </tr>
                         <tr class="hover:bg-slate-800/30 transition">
                             <td class="px-4 py-3 font-medium text-white"><span class="px-2.5 py-1 text-xs rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Outros / Não Especificado</span></td>
@@ -416,7 +417,7 @@
                         </tr>
                         <tr class="hover:bg-slate-800/30 transition">
                             <td class="px-4 py-3 font-medium text-white"><span class="px-2.5 py-1 text-xs rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Outros / Não Especificado</span></td>
-                            <td class="px-4 py-3 text-slate-300 text-sm leading-relaxed"> Secretária escolar (Pará); atende o público urbano e rural; faz o curso para aprimorar o acolhimento, a empatia e a compreensão do comportamento de alunos e colegas.</td>
+                            <td class="px-4 py-3 text-slate-300 text-sm leading-relaxed"> Secretária escolar em Moju (Pará); atende o público urbano e rural; faz o curso para aprimorar o acolhimento, a empatia e a compreensão do comportamento de alunos e colegas.</td>
                         </tr>
                         <tr class="hover:bg-slate-800/30 transition">
                             <td class="px-4 py-3 font-medium text-white"><span class="px-2.5 py-1 text-xs rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Professores / Educadores</span></td>
@@ -595,7 +596,7 @@
             sections.forEach(sectionId => {
                 const section = document.getElementById(sectionId);
                 if (section) {
-                    const sectionTop = section.offsetTop - 150;
+                    const sectionTop = section.offsetTop - 200;
                     if (mainContainer.scrollTop >= sectionTop) {
                         current = sectionId;
                     }
